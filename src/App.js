@@ -1,8 +1,6 @@
-// import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import Main from './components/Main';
 import React, { useState } from 'react';
 import NewAcronym from "./components/NewAcronym";
 import { BrowserRouter as Router, Routes, Route}
