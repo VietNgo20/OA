@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {Button, TextField} from '@mui/material';
+
 
 const NewAcronym = ({ acronyms, addAcronym }) => {
   const navigate = useNavigate();
@@ -19,27 +21,24 @@ const NewAcronym = ({ acronyms, addAcronym }) => {
   }
 
   return (
-    <div>
+    <div class="centered">
       <h1>New Acronym</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Acronym:
-          <input
+      <form onSubmit={handleSubmit} style={{ margin: '20px' }}>
+          <TextField
             type="text"
+            label="New Acronym"
             value={acronym}
             onChange={(event) => setAcronym(event.target.value)}
           />
-        </label>
-        <label>
-          Definition:
-          <input
+          <TextField
             type="text"
+            label="New Definition"
+            sx={{marginLeft: 1}} 
             value={definition}
             onChange={(event) => setDefinition(event.target.value)}
           />
-        </label>
-        <button type="submit">New Acronym</button>
-        <button onClick={() => navigate(-1)}>Cancel</button>
+        <Button variant="contained" sx={{height: 55, marginLeft: 1}}type="submit">Add</Button>
+        <Button variant="contained" color="error" sx={{height: 55, marginLeft: 1}} onClick={() => navigate(-1)}>Cancel</Button>
       </form>
     </div>
   );

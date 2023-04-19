@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
 
 const SearchResult = ({ acronyms }) => {
   const { searchTerm } = useParams();
@@ -10,20 +11,35 @@ const SearchResult = ({ acronyms }) => {
   );
 
   return (
-    <div>
+    <div class="centered">
       <h1>Search Result</h1>
       {filteredAcronyms?.length > 0 ? (
-        <ul>
-          {filteredAcronyms.map((acronym) => (
-            <li key={acronym.acronym}>
-              {acronym.acronym} - {acronym.definition}
-            </li>
-          ))}
-        </ul>
+        <TableContainer  sx={{ width: 400, marginBottom: 5}} component={Paper}>
+            <Table aria-label="simple table">
+                <TableHead>
+                <TableRow>
+                    <TableCell>Acronym</TableCell>
+                    <TableCell align="right">Definition</TableCell>
+                </TableRow>
+                </TableHead>
+                <TableBody>
+                {filteredAcronyms.map((acronym) => (
+                    <TableRow
+                    key={acronym.acronym}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                    <TableCell component="th" scope="row">
+                        {acronym.acronym}
+                    </TableCell>
+                    <TableCell align="right">{acronym.definition}</TableCell>
+                    </TableRow>
+                ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
       ) : (
-        <p>Not found</p>
+        <h2>Not found</h2>
       )}
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <Button variant="contained" onClick={() => navigate(-1)}>Go Back</Button>
     </div>
   );
 };

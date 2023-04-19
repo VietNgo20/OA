@@ -8,6 +8,7 @@ header {
   top: 0px;
   position: fixed;
   width: 100%;
+  z-index: 99;
 }
 
 header h1 {
@@ -102,4 +103,12 @@ a:hover {
 
 img {
   height: 50px;
+}
+
+.centered {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-// import Header from "./components/Header";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 // import Main from './components/Main';
 import React, { useState } from 'react';
@@ -25,22 +25,22 @@ function App() {
     setAcronyms(updatedAcronyms);
   };
 
-  const searchAcronym = (searchTerm) => {
-    const result = acronyms.find(
-      (acronym) => (acronym.acronym ?? '').toLowerCase() === searchTerm.toLowerCase()
-    );
-    return result ? [result] : [];
-  };
+  // const searchAcronym = (searchTerm) => {
+  //   const result = acronyms.find(
+  //     (acronym) => (acronym.acronym ?? '').toLowerCase() === searchTerm.toLowerCase()
+  //   );
+  //   return result ? [result] : [];
+  // };
 
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Routes>
-        <Route path="/" element={<LandingPage acronyms={acronyms} deleteAcronym={deleteAcronym} searchAcronym={searchAcronym} />} />
+        <Route path="/" element={<LandingPage acronyms={acronyms} deleteAcronym={deleteAcronym} />} />
         <Route path="/new-acronym" element={<NewAcronym addAcronym={addAcronym} />} />
         <Route
           path="/search/:searchTerm"
-          element={<SearchResult acronyms={acronyms} searchAcronym={searchAcronym} />}
+          element={<SearchResult acronyms={acronyms}/>}
         />
       </Routes>
       <Footer />
