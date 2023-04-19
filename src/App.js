@@ -25,13 +25,6 @@ function App() {
     setAcronyms(updatedAcronyms);
   };
 
-  // const searchAcronym = (searchTerm) => {
-  //   const result = acronyms.find(
-  //     (acronym) => (acronym.acronym ?? '').toLowerCase() === searchTerm.toLowerCase()
-  //   );
-  //   return result ? [result] : [];
-  // };
-
   return (
     <Router>
       <Header />
