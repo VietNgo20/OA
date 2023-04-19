@@ -34,6 +34,7 @@ const LandingPage = ({ acronyms, deleteAcronym }) => {
       </form>
 
       <Button variant="contained" onClick={() => navigate('/new-acronym')}>New Acronym</Button>
+
       <TableContainer sx={{ width: 1000, marginTop: 5 }}  component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
@@ -62,7 +63,6 @@ const LandingPage = ({ acronyms, deleteAcronym }) => {
         </TableBody>
       </Table>
     </TableContainer>
-      
       
     </div>
   );
