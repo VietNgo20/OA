@@ -12,7 +12,7 @@ const SearchResult = ({ acronyms }) => {
 
   return (
     <div class="centered">
-      <h1>Search Result</h1>
+      <h1>Search Result:</h1>
       {filteredAcronyms?.length > 0 ? (
         <TableContainer  sx={{ width: 400, marginBottom: 5}} component={Paper}>
             <Table aria-label="simple table">
@@ -37,7 +37,7 @@ const SearchResult = ({ acronyms }) => {
             </Table>
         </TableContainer>
       ) : (
-        <h2>Not found</h2>
+        <h3>Not found!</h3>
       )}
       <Button variant="contained" onClick={() => navigate(-1)}>Go Back</Button>
     </div>
