@@ -14,7 +14,7 @@ const SearchResult = ({ acronyms }) => {
     <div class="centered">
       <h1>Search Result:</h1>
       {filteredAcronyms?.length > 0 ? (
-        <TableContainer  sx={{ width: 400, marginBottom: 5}} component={Paper}>
+        <TableContainer  sx={{ width: 800, marginBottom: 5}} component={Paper}>
             <Table aria-label="simple table">
                 <TableHead>
                 <TableRow>
